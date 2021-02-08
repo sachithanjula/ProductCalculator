@@ -108,6 +108,7 @@ public class ProductServiceImpl implements ProductService
         {
             calculatePrice = product.getCartonPrice() * quantity;
         }
+        System.out.println(calculatePrice);
         return calculatePrice;
 
     }

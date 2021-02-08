@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-lg-12">
+      <div class="row">
+
+        <div class="col-sm-4 form-group">
+          <label for=""><h4>Product</h4></label>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for=""><h4>Quantity</h4></label>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for=""></label>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for=""><h4>Price</h4></label>
+        </div>
+
+      </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+      <div class="row">
+
+        <div class="col-sm-4 form-group">
+          <label for="" id="Penguin-ears" #productNamePE>Penguin-ears</label>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <input type="number" id="qty" max="50" class="form-control qty-input" id="qtyPE" #qtyPE>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <button class="btn btn-success" (click)="getValues(productNamePE, qtyPE)">Calculate</button>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <h2>
+            {{ priceLabel1 }}
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-4 form-group">
+          <label for="" id="Horseshoe" #productNameHS>Horseshoe</label>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <input type="number" id="qty" max="50" class="form-control qty-input" #qtyHS>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <button class="btn btn-success" (click)="getValues(productNameHS, qtyHS)">Calculate</button>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <h2>
+            {{ priceLabel2 }}
+          </h2>
+        </div>
+
+      </div>
+
+
+
+  </div>
+</div>
