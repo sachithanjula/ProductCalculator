@@ -1,3 +1,4 @@
+import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 
@@ -26,7 +27,7 @@ export class ProductlistComponent implements OnInit {
 
   }
 
-  calculateUnitPrice(productName: string, qty:number)
+  async calculateUnitPrice(productName: string, qty:number)
   {
 
 
