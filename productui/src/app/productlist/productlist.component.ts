@@ -13,11 +13,20 @@ export class ProductlistComponent implements OnInit {
   priceLabel2 = '00.00';
 
   productType = 'unit';
+  myarr = [];
 
   constructor(private productService : ProductService) { }
 
   ngOnInit() {
-
+    for (let i = 1; i <= 50; i++) {
+      this.productService.calculatePrice("Penguin-ears", "unit", i).subscribe(
+          (data) => {
+          console.log(i + " "+data);
+          this.myarr.push(data);
+          console.log(this.myarr);
+        }
+      )
+    }
   }
 
   getValues(item, item1)
@@ -27,7 +36,7 @@ export class ProductlistComponent implements OnInit {
 
   }
 
-  async calculateUnitPrice(productName: string, qty:number)
+  calculateUnitPrice(productName: string, qty:number)
   {
 
 
@@ -40,12 +49,12 @@ export class ProductlistComponent implements OnInit {
 
       for (let i = 1; i <= 50; i++) {
         this.productService.calculatePrice("Penguin-ears", "unit", i).subscribe(
-           (data) => {
+            (data) => {
             console.log(i + " "+data);
+            this.myarr = data['myarr']
           }
         )
       }
-
 
     }
     else
