@@ -14,6 +14,7 @@ export class ProductlistComponent implements OnInit {
 
   productType = 'unit';
   myarr = [];
+  myarr1 = [];
 
   constructor(private productService : ProductService) { }
 
@@ -26,48 +27,26 @@ export class ProductlistComponent implements OnInit {
           console.log(this.myarr);
         }
       )
-    }
-  }
-
-  getValues(item, item1)
-  {
-
-    this.calculateUnitPrice(item.id, item1.value);
-
-  }
-
-  calculateUnitPrice(productName: string, qty:number)
-  {
-
-
-    console.log(productName);
-    console.log(this.productType);
-    console.log(qty);
-
-    if(productName === 'Penguin-ears')
-    {
-
-      for (let i = 1; i <= 50; i++) {
-        this.productService.calculatePrice("Penguin-ears", "unit", i).subscribe(
-            (data) => {
-            console.log(i + " "+data);
-            this.myarr = data['myarr']
-          }
-        )
-      }
-
-    }
-    else
-    {
-      this.productService.calculatePrice(productName, this.productType, qty).subscribe(
-        data => {
-          console.log(data);
-          this.priceLabel2 = data;
+      this.productService.calculatePrice("Horseshoe", "unit", i).subscribe(
+        (data) => {
+        console.log(i + " "+data);
+        this.myarr1.push(data);
+        console.log(this.myarr1);
         }
       )
+
     }
-
-
+    // for (let i = 1; i <= 50; i++) {
+    //   this.productService.calculatePrice("Horseshoe", "unit", i).subscribe(
+    //       (data) => {
+    //       console.log(i + " "+data);
+    //       this.myarr1.push(data);
+    //       console.log(this.myarr1);
+    //     }
+    //   )
+    // }
   }
+
+
 
 }
